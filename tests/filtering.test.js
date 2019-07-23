@@ -12,7 +12,7 @@ const fakeData = [
 
 const headers = "<thead><th>Name</th></thead>";
 
-test("immediate parent rows are returned if a child matches the filter", () => {
+test("string data: immediate parent rows are returned if a child matches the filter", () => {
 
     const $table = $(document.createElement('table'));
     $table.append($(headers));
@@ -34,7 +34,6 @@ test("immediate parent rows are returned if a child matches the filter", () => {
     expect($(rows[1]).find("td")[1].textContent).toBe("CFO");
 
 });
-
 test("all parent rows are returned if a child matches the filter", () => {
 
     const $table = $(document.createElement('table'));
@@ -157,7 +156,7 @@ test("can handle null child rows", () => {
 });
 
 
-test("immediate parent rows are returned if a child matches the filter on boolean column", () => {
+test("boolean data: immediate parent rows are returned if a child matches the filter", () => {
 
     const fakeData = [
         {"tt_key": 1, "tt_parent": 0, name: "CEO", hasBonus: false},
